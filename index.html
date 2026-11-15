@@ -3,68 +3,222 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>On the Dot: never miss the start of a meeting</title>
-  <meta name="description" content="On the Dot is a Mac menu-bar app that covers your screen with an alert the minute your next Google Calendar meeting starts.">
+  <title>On the Dot: be on time for every meeting</title>
+  <meta name="description" content="On the Dot is a Mac menu-bar app that covers your screen the minute your next Google Calendar meeting starts, with one button to join.">
   <link rel="icon" href="icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home">
 <header>
   <img src="icon.png" alt="">
   <a class="name" href="index.html">On the Dot</a>
-  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  <nav><a class="jump" href="#calendar">Calendar</a><a class="jump" href="#transcripts">Transcripts</a><a class="jump" href="#questions">Questions</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
 </header>
 
 <main>
-  <section class="hero">
-    <img src="icon.png" alt="The On the Dot icon: an alarm clock in front of a calendar page">
-    <h1>Never miss the start of a meeting</h1>
-    <p class="lead">On the Dot is a Mac menu-bar app. The minute your next meeting starts, it covers every screen
-      with an alert and a Join button. It is hard to miss on purpose.</p>
-    <p class="soft">The download is coming soon. It will need macOS 26 on a Mac with Apple silicon, and a Google
-      account.</p>
+  <section class="hero wrap">
+    <div class="text">
+      <h1>Be on time for every meeting</h1>
+      <p class="lead">A small reminder in the corner is easy to miss. On the Dot covers your whole screen the minute
+        a meeting starts, with one button to join. It is also your calendar, and it writes the meeting's transcript
+        for you.</p>
+      <div class="actions">
+        <a class="button" href="#alerts">See how it works</a>
+      </div>
+      <p class="soft">Coming soon for Macs with Apple silicon on macOS 26.</p>
+      <ul class="chips">
+        <li><a href="#alerts">Alerts you cannot miss</a></li>
+        <li><a href="#calendar">A full calendar built in</a></li>
+        <li><a href="#transcripts">Transcripts and summaries</a></li>
+        <li>Works with Google Calendar</li>
+        <li>Your data stays on your Mac</li>
+      </ul>
+    </div>
+    <figure class="screen">
+      <img src="shots/alert.png" width="1440" height="900"
+           alt="The full-screen alert: a one-minute countdown, the meeting's title, and buttons to join Google Meet, snooze or dismiss">
+      <figcaption>The alert covers every screen and plays a sound until you join, snooze or dismiss.</figcaption>
+    </figure>
   </section>
 
-  <h2>What it does</h2>
-  <ul>
-    <li><strong>Full-screen alerts.</strong> When a meeting starts, or a few minutes before, an alert covers every
-      screen and plays a sound until you join, snooze or dismiss it.</li>
-    <li><strong>One-click Join.</strong> It finds the video link in the invitation: Google Meet, Zoom, Microsoft
-      Teams and many more.</li>
-    <li><strong>Your calendar in the menu bar.</strong> See today's meetings, answer invitations, and add, move or
-      delete events without opening a browser.</li>
-    <li><strong>Leave by.</strong> For a meeting in a place, it can tell you when to go, from Apple Maps' travel
-      time.</li>
-    <li><strong>Transcripts written on your Mac.</strong> If you ask for one, the app writes the meeting's
-      transcript on your Mac. The sound never leaves it.</li>
-  </ul>
+  <section class="feature wrap" id="alerts">
+    <div class="text">
+      <p class="eyebrow">Alerts</p>
+      <h2>As loud or as quiet as you like</h2>
+      <p>Fill the screen for the meetings that matter, and let the rest come quietly. Each calendar can have its
+        own look.</p>
+      <ul>
+        <li>Three sizes: the full screen, a band across the top, or a small card.</li>
+        <li>Alert at the start, or 1, 2 or 5 minutes before. Snooze for 1, 3 or 5 minutes.</li>
+        <li>Enter joins and Esc dismisses, so your hands stay on the keyboard.</li>
+        <li>While you share your screen, the alert stays small and is left out of the share.</li>
+      </ul>
+    </div>
+    <figure class="screen">
+      <img src="shots/alert-band.png" width="1440" height="300" loading="lazy"
+           alt="The alert as a band across the top of the screen, with the countdown, the title and the Join button">
+      <figcaption>The band leaves the rest of your screen free.</figcaption>
+    </figure>
+    <figure class="narrow">
+      <img src="shots/alert-small.png" width="1240" height="312" loading="lazy"
+           alt="The alert as a small card under the menu bar, with the countdown, Join, snooze times and Dismiss">
+      <figcaption>The small card sits under the menu bar.</figcaption>
+    </figure>
+    <figure>
+      <div class="trio">
+        <img src="shots/alert-blue.png" width="720" height="450" loading="lazy" alt="The alert in blue">
+        <img src="shots/alert-orange.png" width="720" height="450" loading="lazy" alt="The alert in orange">
+        <img src="shots/alert-purple.png" width="720" height="450" loading="lazy" alt="The alert in purple">
+      </div>
+      <figcaption>Green, blue, teal, purple, pink or orange: the app and its alert take the colour you choose.</figcaption>
+    </figure>
+  </section>
 
-  <h2>What it asks Google for, and why</h2>
-  <p>You sign in with Google in your browser. The app then asks for these permissions and nothing more.</p>
-  <div class="card scroll">
-    <table>
-      <tr><th>Permission</th><th>What the app does with it</th></tr>
-      <tr><td>Your email, name and photo</td><td>Shows which account is signed in.</td></tr>
-      <tr><td>See your calendars<br><code>calendar.readonly</code>, <code>calendar.calendarlist</code></td>
-        <td>Lists your calendars, so you choose which ones alert you, and reads their meetings.</td></tr>
-      <tr><td>See and change events<br><code>calendar.events</code></td>
-        <td>Reads your meetings to alert you on time. Sends your answer to an invitation, and the events you add,
-          move, change or delete in the app.</td></tr>
-      <tr><td>See your organisation's directory<br><code>directory.readonly</code></td>
-        <td>Shows your colleagues' photos in a meeting's guest list, and suggests guests as you type. Only for
-          Google Workspace accounts.</td></tr>
-    </table>
-  </div>
+  <section class="feature wrap">
+    <div class="text">
+      <p class="eyebrow">Join</p>
+      <h2>One click, and you're in</h2>
+      <p>On the Dot finds the video link in the invitation, so the button always goes to the right place.</p>
+      <ul>
+        <li>Google Meet, Zoom, Microsoft Teams, Webex and 28 more services.</li>
+        <li>Answer invitations with Yes, Maybe or No, right where you see them.</li>
+        <li>Today's meetings and a countdown to the next one live in the menu bar.</li>
+      </ul>
+    </div>
+    <figure class="window">
+      <picture>
+        <source srcset="shots/upcoming-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="shots/upcoming-light.png" width="1720" height="1000" loading="lazy"
+             alt="The Upcoming list: today's meetings, each with a Join button for its service and Yes, Maybe, No answers">
+      </picture>
+    </figure>
+  </section>
 
-  <h2>Your data stays on your Mac</h2>
-  <p>The app talks to Google straight from your Mac. There is no On the Dot server, so the person who makes the app never sees your calendar,
-    your meetings or your transcripts. What the app keeps is encrypted on your Mac, and your sign-in is kept in the
-    macOS Keychain. No ads, no tracking, no analytics.</p>
-  <p>The full details are in the <a href="privacy.html">privacy policy</a>.</p>
+  <section class="feature wrap" id="calendar">
+    <div class="text">
+      <p class="eyebrow">Calendar</p>
+      <h2>Your week, without opening a browser</h2>
+      <p>See your day, week or month, and change it in place. Your calendars keep their colours.</p>
+      <ul>
+        <li>Add, move, change and delete events, with guests and a Meet link.</li>
+        <li>Type "Lunch with Anna tomorrow at 1" and the event is ready to save.</li>
+        <li>Shows the calendars set up on your Mac too, such as iCloud and Microsoft.</li>
+      </ul>
+    </div>
+    <figure class="window">
+      <picture>
+        <source srcset="shots/calendar-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="shots/calendar-light.png" width="1700" height="1110" loading="lazy"
+             alt="The week view of the calendar, with meetings in their calendars' colours, all-day events and where you work each day">
+      </picture>
+    </figure>
+  </section>
+
+  <section class="feature wrap">
+    <div class="text">
+      <p class="eyebrow">Leave by</p>
+      <h2>Know when to go</h2>
+      <p>For a meeting in a place, On the Dot can alert you when it's time to leave, from Apple Maps' travel time
+        by car, transit or on foot. It is off until you turn it on.</p>
+    </div>
+    <figure class="screen narrow">
+      <img src="shots/alert-leave.png" width="1440" height="900" loading="lazy"
+           alt="An alert for a lunch that says: Leave now, 18 minutes by car">
+    </figure>
+  </section>
+
+  <section class="feature wrap" id="transcripts">
+    <div class="text">
+      <p class="eyebrow">Transcripts</p>
+      <h2>Notes that write themselves, on your Mac</h2>
+      <p>Start a transcript when you join. On the Dot writes down what was said, and can sum it up into key points
+        and action items.</p>
+      <ul>
+        <li>The sound is turned into text on your Mac. It never leaves it.</li>
+        <li>The recording is deleted as soon as the transcript is written.</li>
+        <li>Summaries are written on your Mac by Apple Intelligence, for meetings in English.</li>
+      </ul>
+    </div>
+    <figure class="window">
+      <picture>
+        <source srcset="shots/transcripts-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="shots/transcripts-light.png" width="1700" height="1110" loading="lazy"
+             alt="A kept transcript with its summary: a short overview, key points and action items, above who said what">
+      </picture>
+    </figure>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Your data stays on your Mac</h2>
+      <p class="lead">The app talks to Google straight from your Mac. There is no On the Dot server, so nobody
+        else ever sees your calendar, your meetings or your transcripts.</p>
+      <div class="points">
+        <div><h3>No server</h3><p>Nothing you do in the app passes through anyone else's computer on its way to
+          Google.</p></div>
+        <div><h3>Encrypted</h3><p>What the app keeps is encrypted on your Mac, and your sign-in is kept in the
+          macOS Keychain.</p></div>
+        <div><h3>No tracking</h3><p>No ads, no analytics, and no account to make. You sign in with Google and
+          nothing else.</p></div>
+      </div>
+      <p class="more">The full details are in the <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <section class="permissions wrap">
+    <div class="text">
+      <p class="eyebrow">Google permissions</p>
+      <h2>What it asks Google for, and why</h2>
+      <p>You sign in with Google in your browser. The app then asks for these permissions and nothing more.</p>
+    </div>
+    <div class="card scroll">
+      <table>
+        <tr><th>Permission</th><th>What the app does with it</th></tr>
+        <tr><td>Your email, name and photo</td><td>Shows which account is signed in.</td></tr>
+        <tr><td>See your calendars<br><code>calendar.readonly</code>, <code>calendar.calendarlist</code></td>
+          <td>Lists your calendars, so you choose which ones alert you, and reads their meetings.</td></tr>
+        <tr><td>See and change events<br><code>calendar.events</code></td>
+          <td>Reads your meetings to alert you on time. Sends your answer to an invitation, and the events you add,
+            move, change or delete in the app.</td></tr>
+        <tr><td>See your organisation's directory<br><code>directory.readonly</code></td>
+          <td>Shows your colleagues' photos in a meeting's guest list, and suggests guests as you type. Only for
+            Google Workspace accounts.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="faq wrap" id="questions">
+    <h2>Questions</h2>
+    <div class="list">
+      <details>
+        <summary>Which calendars does it work with?</summary>
+        <p>Google Calendar, with one Google account or several. It can also show and alert for the calendars set
+          up on your Mac, such as iCloud and Microsoft.</p>
+      </details>
+      <details>
+        <summary>Which Macs does it run on?</summary>
+        <p>Macs with Apple silicon, on macOS 26.</p>
+      </details>
+      <details>
+        <summary>Will other people see the alert when I share my screen?</summary>
+        <p>No. While you share your screen, the alert shows as the band or the small card, and it is left out of
+          the share.</p>
+      </details>
+      <details>
+        <summary>Does it still alert me when I'm offline?</summary>
+        <p>Yes. The app remembers the meetings it last read, so alerts still come when the network drops.</p>
+      </details>
+      <details>
+        <summary>Do the other people know about a transcript?</summary>
+        <p>Only if you tell them. In many places you must tell people, or ask them, before you record what they
+          say, so please do.</p>
+      </details>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a>
+  <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="mailto:onthedotapplication@gmail.com">Contact</a>
   <p>Google Calendar, Google Meet and Google Workspace are trademarks of Google LLC. On the Dot is not made or
     endorsed by Google.</p>
 </footer>

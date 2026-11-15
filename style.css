@@ -1,4 +1,4 @@
-/* One style for the three pages. The greens are the app icon's. */
+/* One style for the three pages. The greens are the app icon's and the alert's. */
 :root {
   --page: #f6faf7;
   --card: #ffffff;
@@ -6,7 +6,10 @@
   --soft: #4d5f55;
   --line: #d6e5dc;
   --green: #0e5a34;
-  --accent: #1f9d5c;
+  --accent: #1a8a50;
+  --join: #3ddc84;
+  --deep: #0c2a1c;
+  --shadow: 0 24px 60px -24px rgba(12, 42, 28, 0.45);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,28 +20,30 @@
     --line: #26392e;
     --green: #3cc47a;
     --accent: #3cc47a;
+    --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.8);
   }
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--page);
   color: var(--text);
   font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent); }
+
+/* The policy and terms pages: one narrow column to read. */
 main, header, footer { max-width: 720px; margin: 0 auto; padding: 0 16px; }
 header { display: flex; align-items: center; gap: 12px; padding-top: 24px; padding-bottom: 8px; }
 header img { width: 44px; height: 44px; }
-header a.name { font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
-header nav { margin-left: auto; display: flex; gap: 16px; font-size: 15px; }
-a { color: var(--accent); }
+header a.name { font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; white-space: nowrap; }
+header nav { margin-left: auto; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 16px; font-size: 15px; }
 h1 { font-size: 34px; line-height: 1.2; margin: 32px 0 12px; }
 h2 { font-size: 22px; margin: 36px 0 8px; color: var(--green); }
-p, li { color: var(--text); }
 .lead { font-size: 20px; color: var(--soft); }
 .soft { color: var(--soft); font-size: 15px; }
-.hero { text-align: center; padding: 24px 0 8px; }
-.hero img { width: 128px; height: 128px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; margin: 16px 0; }
 .scroll { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; font-size: 15px; table-layout: fixed; overflow-wrap: anywhere; }
@@ -47,3 +52,69 @@ tr:last-child td { border-bottom: 0; }
 code { font-size: 14px; background: var(--line); padding: 1px 5px; border-radius: 5px; }
 footer { margin-top: 48px; padding-top: 16px; padding-bottom: 40px; border-top: 1px solid var(--line); font-size: 14px; color: var(--soft); }
 footer a { margin-right: 14px; }
+
+/* The home page: wider, with pictures of the app. */
+.home header, .home footer, .wrap { max-width: 1072px; }
+.home main { max-width: none; padding: 0; }
+.wrap { margin: 0 auto; padding: 0 16px; }
+.text { max-width: 660px; margin: 0 auto; text-align: center; }
+.text ul { text-align: left; display: inline-block; margin: 8px 0 0; padding-left: 22px; }
+.text li { margin: 4px 0; }
+
+.hero { padding: 40px 0 8px; }
+.hero h1 { font-size: clamp(38px, 6.4vw, 64px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 16px; }
+.hero .lead { font-size: clamp(18px, 2.4vw, 22px); margin: 0 auto 24px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.button {
+  display: inline-block; padding: 13px 24px; border-radius: 999px; font-weight: 650; text-decoration: none;
+  background: var(--join); color: #06281a; border: 1px solid transparent;
+}
+.button:hover { filter: brightness(1.06); }
+.text ul.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 0; margin: 22px 0 0; }
+.chips a { color: var(--text); text-decoration: none; font-weight: 600; }
+.chips li { font-size: 14px; color: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; background: var(--card); }
+
+/* A picture of the app. "screen" is a whole display (the alert covers it); "window" is the app's own window. */
+figure { margin: 32px auto 0; }
+figcaption { text-align: center; font-size: 14px; color: var(--soft); margin-top: 10px; }
+.screen img { border-radius: 10px; }
+.screen { background: #050a07; padding: 10px; border-radius: 20px; box-shadow: var(--shadow); border: 1px solid #2a3a31; }
+.screen figcaption { color: #a3b8ab; margin: 8px 0 0; }
+.window img { border-radius: 14px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.narrow { max-width: 760px; }
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+.trio img { border-radius: 10px; border: 1px solid #2a3a31; }
+
+section.feature { padding: 72px 0 0; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 6px; }
+.feature h2, .permissions h2, .band h2, .faq h2 {
+  font-size: clamp(26px, 4vw, 38px); line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 12px; color: var(--text);
+}
+.feature p, .permissions p { color: var(--soft); margin: 0; }
+
+/* The promise about your data, on the alert's own dark green. */
+.band { margin-top: 88px; padding: 64px 0; background: linear-gradient(180deg, var(--deep), #145233); color: #e8f3ec; }
+.band h2 { color: #ffffff; text-align: center; }
+.band .lead { color: #b9d6c5; text-align: center; max-width: 660px; margin: 0 auto; }
+.points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.points div { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 16px; padding: 18px 20px; }
+.points h3 { margin: 0 0 6px; font-size: 18px; color: #ffffff; }
+.points p { margin: 0; font-size: 15px; color: #cfe3d7; }
+.band a { color: var(--join); }
+.band .more { text-align: center; margin: 28px 0 0; }
+
+.permissions { padding-top: 72px; }
+.permissions .card { max-width: 860px; margin: 24px auto 0; }
+.faq { padding-top: 72px; }
+.faq .list { max-width: 760px; margin: 20px auto 0; }
+.faq h2 { text-align: center; }
+details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+summary { cursor: pointer; font-weight: 650; font-size: 18px; }
+details p { margin: 8px 0 0; color: var(--soft); }
+
+@media (max-width: 720px) {
+  header nav .jump { display: none; }
+  .points, .trio { grid-template-columns: 1fr; }
+  .screen { padding: 6px; border-radius: 14px; }
+  section.feature, .permissions, .faq { padding-top: 56px; }
+}
