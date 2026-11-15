@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On the Dot: never miss the start of a meeting</title>
+  <meta name="description" content="On the Dot is a Mac menu-bar app that covers your screen with an alert the minute your next Google Calendar meeting starts.">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img src="icon.png" alt="">
+  <a class="name" href="index.html">On the Dot</a>
+  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+</header>
+
+<main>
+  <section class="hero">
+    <img src="icon.png" alt="The On the Dot icon: an alarm clock in front of a calendar page">
+    <h1>Never miss the start of a meeting</h1>
+    <p class="lead">On the Dot is a Mac menu-bar app. The minute your next meeting starts, it covers every screen
+      with an alert and a Join button. It is hard to miss on purpose.</p>
+    <p class="soft">The download is coming soon. It will need macOS 26 on a Mac with Apple silicon, and a Google
+      account.</p>
+  </section>
+
+  <h2>What it does</h2>
+  <ul>
+    <li><strong>Full-screen alerts.</strong> When a meeting starts, or a few minutes before, an alert covers every
+      screen and plays a sound until you join, snooze or dismiss it.</li>
+    <li><strong>One-click Join.</strong> It finds the video link in the invitation: Google Meet, Zoom, Microsoft
+      Teams and many more.</li>
+    <li><strong>Your calendar in the menu bar.</strong> See today's meetings, answer invitations, and add, move or
+      delete events without opening a browser.</li>
+    <li><strong>Leave by.</strong> For a meeting in a place, it can tell you when to go, from Apple Maps' travel
+      time.</li>
+    <li><strong>Transcripts written on your Mac.</strong> If you ask for one, the app writes the meeting's
+      transcript on your Mac. The sound never leaves it.</li>
+  </ul>
+
+  <h2>What it asks Google for, and why</h2>
+  <p>You sign in with Google in your browser. The app then asks for these permissions and nothing more.</p>
+  <div class="card scroll">
+    <table>
+      <tr><th>Permission</th><th>What the app does with it</th></tr>
+      <tr><td>Your email, name and photo</td><td>Shows which account is signed in.</td></tr>
+      <tr><td>See your calendars<br><code>calendar.readonly</code>, <code>calendar.calendarlist</code></td>
+        <td>Lists your calendars, so you choose which ones alert you, and reads their meetings.</td></tr>
+      <tr><td>See and change events<br><code>calendar.events</code></td>
+        <td>Reads your meetings to alert you on time. Sends your answer to an invitation, and the events you add,
+          move, change or delete in the app.</td></tr>
+      <tr><td>See your organisation's directory<br><code>directory.readonly</code></td>
+        <td>Shows your colleagues' photos in a meeting's guest list, and suggests guests as you type. Only for
+          Google Workspace accounts.</td></tr>
+    </table>
+  </div>
+
+  <h2>Your data stays on your Mac</h2>
+  <p>The app talks to Google straight from your Mac. There is no On the Dot server, so the person who makes the app never sees your calendar,
+    your meetings or your transcripts. What the app keeps is encrypted on your Mac, and your sign-in is kept in the
+    macOS Keychain. No ads, no tracking, no analytics.</p>
+  <p>The full details are in the <a href="privacy.html">privacy policy</a>.</p>
+</main>
+
+<footer>
+  <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a>
+  <p>Google Calendar, Google Meet and Google Workspace are trademarks of Google LLC. On the Dot is not made or
+    endorsed by Google.</p>
+</footer>
+</body>
+</html>
